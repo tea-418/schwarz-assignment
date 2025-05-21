@@ -126,7 +126,7 @@ Andere Pfade, die mit der Tour zusammenhängen, laufen auch über das API Gatewa
 
 Ein POST auf den Pfad /tours, bei dem z.B. der Status auf "ended" gesetzt wird, wird von der Lambda-Funktion "Business Logic" geprüft, mit den Daten in der "Main Database" abgeglichen und der Status entsprechend dort auch aktualisiert.
 
-Die Main Database ist in unserem Beispiel eine rds die bspw. eine PostfreSQL sein könnte.
+Die Main Database ist in unserem Beispiel eine rds die bspw. eine PostfgreSQL sein könnte.
 
 In diesem Fall triggert die Lambda auch noch eine weitere Lambda, welche eine Rechnung generiert und per SNS rausschickt.
 
@@ -142,7 +142,7 @@ Die Admins bzw. der Service-Staff oder die Führungskräfte können über eine h
 
 Zu guter Letzt haben wir die Business Intelligence und Data Science-Seite, die auf eine Analyse-App (z.B. Snowflake) zugreifen kann, um die Daten unserer Infrastruktur zu analysieren.
 
-Diese Snowflake-App greift auf einen S3-Bucket zu (der auch ein Data Warehouse sein könnte), welcher zuvor von einer periodisch laufenden ETL-Pipeline ("ETL Flow") befüllt wurde.
+Diese Snowflake-App greift auf einen S3-Bucket zu, welcher zuvor von einer periodisch laufenden ETL-Pipeline ("ETL Flow") befüllt wurde.
 
 Diese Pipeline könnte eine weitere Aneinanderreihung von Lambdas und S3-Buckets sein oder etwas ganz anderes sein, je nachdem, wie es sich die Data Scientists wünschen.
 
@@ -180,7 +180,7 @@ Dies müsste man vorallem mit den jeweiligen Fachbereichen abklären.
 
 ##### Monitoring und Alerting 
 
-Auch könnten man Monitoring und Alerting mittels CloudWatch einrichten, welches die Logdaten und den Traffic zusammenfasst und analysiert, sowie bei Ungereimtheiten die jeweils verantwortlichen Personen alarmiert.
+Auch müsste man Monitoring und Alerting bspw. mittels CloudWatch einrichten, welches die Logdaten, Traffic und andere Metriken zusammenfasst und analysiert, sowie bei Ungereimtheiten die jeweils verantwortlichen Stellen alarmiert.
 
 ##### Sicherheitsaspekte
 
@@ -188,7 +188,7 @@ Das Rechtekonzept ist ebenfalls nicht Teil des Diagramms. Mittels IAM lässt sic
 
 Auch eine Firewall bzw. Traffic Monitoring und DDoS-Schutz ist in dieser Architektur nicht gegeben. Dafür könnte man einen Cloudflare-Tunnel oder mit AWS eine WAF einrichten.
 
-Zu guter Letzt sei noch das Thema Autorisierung erwähnt. Wie sich die mobilen Clients gegenüber dem Backend authentifizieren und autorisieren können, ist hier nicht abschließend geklärt und muss noch behandelt werden.
+Zuguterletzt sei noch das Thema Autorisierung erwähnt. Wie sich die mobilen Clients gegenüber dem Backend authentifizieren und autorisieren können, ist hier nicht abschließend geklärt und muss noch behandelt werden.
 
 ## Automation
 
@@ -301,7 +301,7 @@ except lambda_client.exceptions.ResourceConflictException:
 
 Das Skript liegt auch unter `./deploy_infra.py` vor.
 
-Voraussetzung für die Ausführung dieses Skriptes ist, dass Python (in diesem Fall 3.13.3) installiert ist und die Abhängigkeiten aus der `requirements.txt` installiert wurden.
+Voraussetzung für die Ausführung dieses Skriptes ist, dass Python (in diesem Fall 3.13) installiert ist und die Abhängigkeiten aus der `requirements.txt` installiert wurden.
 
 Dafür bietet sich eine venv an.
 
@@ -317,7 +317,7 @@ Um die jeweiligen Komponenten zu verändern, kann das Skript angepasst werden. U
 
 ## Datenexfiltration und Dateninfiltration
 
-Um die Daten zu sichern, können in dieser Architektur sowie allgemein einige Schritte unternommen werden, unter anderem:
+Um die Daten zu sichern, können in dieser Architektur sowie allgemein einige Schritte unternommen werden:
 
 ### Verschlüsselung
 
@@ -369,7 +369,7 @@ Wenn wir es schaffen die Fahrzeuge mit unserer Infrastruktur zu verknüpfen so k
 
 Dafür ist es notwendig ein solches Anwendungsgebiet zu verproben und zu rechnen. Unsere Datenplattform muss weiter ausgebaut werden, mit den Fahrzeugen besser vernetzt zu sein und die anfallenden IoT Daten zu sammeln und zu analysieren. 
 
-Indem wir unsere Flotte mit unserer Plattform verknüpfen können wir eventuell auch digital Twins schaffen mit denen wir alles über das Fahrzeug analysieren und verstehen können.
+Indem wir unsere Flotte mit unserer Plattform verknüpfen können wir eventuell auch digital Twins schaffen mit denen wir unserer Fahrzeuge in echtzeit analysieren und verstehen können.
 
 ### Vorrausschauende Planung
 
