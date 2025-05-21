@@ -1,5 +1,23 @@
 # Nils Marx - Aufgabe für Schwarz IT Cloud Platform Engineer - Aufgabe B
 
+Inhaltsverzeichnis
+=================
+* [Architektur](#architektur)
+    * [Anforderungen](#anforderungen)  
+    * [Wahl von AWS](#wahl-von-aws)
+    * [Annahmen und Entscheidungen](#annahmen-und-entscheidungen)
+    * [Architekturdiagramm](#architekturdiagramm)
+    * [Blind Spots des Diagrammes und Ausbaustufen](#blind-spots-des-diagrammes-und-ausbaustufen)
+* [Automation](#automation)
+* [Datenexfiltration und Dateninfiltration](#datenexfiltration-und-dateninfiltration)
+    * [Verschlüsselung](#verschlüsselung)
+    * [Netzwerksicherheit](#netzwerksicherheit)
+    * [Monitoring und Protokollierung](#monitoring-und-protokollierung)
+    * [Layer-8-Problemen vorbeugen](#layer-8-problemen-vorbeugen)
+* [Vision](#vision)
+    * [IoT driven](#iot-driven)
+    * [Vorrausschauende Planung](#vorrausschauende-planung)
+
 ## Architektur
 
 ### Anforderungen
@@ -345,7 +363,7 @@ Dafür lassen sich in AWS die Services CloudWatch und CloudTrail nutzen. Bei ein
 
 Desweiteren sollten jene Bestandteile, die mit den Daten interagieren, entweder durch eine weitere Schicht oder in ihrem eigenen Code vorab einen Filterungsmechanismus gewährleisten, der Code-Injektionen oder unlogische Daten herausfiltert.
 
-### Layer-8-Probleme vorbeugen
+### Layer-8-Problemen vorbeugen
 
 Mitarbeiter, die in Kontakt mit den administrativen Stellen unserer Infrastruktur kommen, sowie jene, die die Daten analysieren, sollten in irgendeiner Art vor etwaigen Phishing- oder ähnlichen Angriffen gewarnt und geschult werden, um die Einfallsrisiken auch auf diese Weise zu minimieren.
 
@@ -376,3 +394,5 @@ Indem wir unsere Flotte mit unserer Plattform verknüpfen können wir eventuell 
 Mit dem Ausbau unserer Datenplattform im Bereich der Analyse können wir eine vorrauschauende Planung einsetzen, welche es uns ermöglicht aufgrund von Metadaten und historischen analysen vorrauszusehen wann und wo welche Taxis gebraucht werden und können so schneller Taxis dort haben wo sie auch Geld machen.
 
 Dafür müssen wir unsere Daten weiter Nutzbar machen und unseren Fahrer:innen bzw. der Planstelle in aufbereiteter Form zur Verfügung stellen damit diese gemeinsam mit ihrem Resortwissen täglich robuste Entscheidungen treffen können die unseren Profit maximieren.
+
+[Zurück zum Anfang](#)
