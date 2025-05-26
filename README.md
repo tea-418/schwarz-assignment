@@ -395,4 +395,4 @@ Mit dem Ausbau unserer Datenplattform im Bereich der Analyse können wir eine vo
 
 Dafür müssen wir unsere Daten weiter Nutzbar machen und unseren Fahrer:innen bzw. der Planstelle in aufbereiteter Form zur Verfügung stellen damit diese gemeinsam mit ihrem Resortwissen täglich robuste Entscheidungen treffen können die unseren Profit maximieren.
 
-[Zurück zum Anfang](#)
+[Zurück zum Anfang](#nils-marx---aufgabe-für-schwarz-it-cloud-platform-engineer---aufgabe-b)
